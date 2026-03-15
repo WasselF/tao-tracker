@@ -190,8 +190,10 @@
 
     <script>
         // -- Configuration --
-        const GTFS_ZIP_URL = "https://chouette.enroute.mobi/api/v1/datas/keolis_orleans/gtfs.zip";
-        const GTFS_RT_URL = "https://ara-api.enroute.mobi/tao/gtfs/trip-updates";
+        // Utilisation d'un proxy CORS pour éviter les blocages sur GitHub Pages
+        const CORS_PROXY = "https://corsproxy.io/?";
+        const GTFS_ZIP_URL = CORS_PROXY + encodeURIComponent("https://chouette.enroute.mobi/api/v1/datas/keolis_orleans/gtfs.zip");
+        const GTFS_RT_URL = CORS_PROXY + encodeURIComponent("https://ara-api.enroute.mobi/tao/gtfs/trip-updates");
 
         let map;
         let stops = [];
